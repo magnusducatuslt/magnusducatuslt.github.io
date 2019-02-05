@@ -1,0 +1,216 @@
+html,
+body {
+	background: black;
+	font-family: Roboto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+.substrate {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background:#82a9fc;
+	position: absolute;
+	z-index: 2;
+	opacity: 0.4;
+}
+.tabs {
+	position: absolute;
+	z-index: 3;
+	margin-bottom: 20%;
+	background: white;
+	width: 70%;
+	height: 50%;
+	border-radius: 5px;
+	box-shadow: 0px 5px 5px -3px #000000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tabs__container {
+	display: flex;
+
+	flex-flow: row;
+	/*padding: 10px;*/
+	width: 98%;
+	height: 95%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.tabs__block {
+	width: 33%;
+	height: 100%;
+}
+.tabs__block:hover {
+	background: #f5f5f5;
+}
+.tabs__header {
+	height: 40%;
+	width:40%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tabs__description, .modal__description {
+	font-size: 9pt;
+	color: grey;
+	text-align: center;
+	width: 80%;
+}
+.modal__name,
+.modal__price,
+.tabs__name,
+.tabs__price {
+	color: #8d4bf7;
+}
+.tabs__body {
+	height: 60%;
+}
+.tabs__name{
+	font-size: 15pt;
+	height: 20%;
+}
+.tabs__description {
+	height: 50%;
+}
+.tabs__price {
+	font-size: 15pt;
+	height: 30%;
+}
+.tabs__name, .tabs__description, .tabs__price {
+	margin: 0 10%;
+}
+.tabs__price-symb {
+	vertical-align: top;
+	font-size: 10pt;
+}
+.tabs__price-value {
+	font-size: 15pt;
+}
+.modal {
+	display: none;
+	position: absolute;
+	z-index: 50;
+	opacity: 1;
+	width: 25%;
+	height: 50%;
+}
+.modal__header,
+.modal__body,
+.modal__footer,
+.tabs__block,
+.tabs__body {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+.modal__container {
+	background: white;
+	display: flex;
+	flex-flow: column nowrap;
+	border-radius: 5px;
+	height: 100%;
+}
+.modal__cross {
+	/* width: 100%;
+    height: 5%;
+    /* align-self: flex-end; */
+    display: flex;
+	justify-content: flex-end;
+	margin-right: 2%;
+    margin-top: 2%;
+}
+.modal__title {
+	font-size: 15pt;
+    align-self: center;
+}
+.modal__block {
+	height: 80%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.modal__body {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+.modal__header{
+	height: 30%;
+    justify-content: flex-end;
+}
+.modal__image{
+	height: 70%;
+}
+.modal__name {
+	font-size: 15pt;
+}
+.modal__description {
+	width: 80%;
+}
+.modal__name,.modal__description, .modal__price {
+	margin: 2%;
+}
+.modal__footer {
+	height: 10%;
+}
+.modal__confirm {
+	height: 100%;
+	width: 100%;
+	border-radius:5px;
+	background: blue;
+	color: white;
+	text-align: center;
+    line-height: 50%;
+}
+@media screen and (max-width:480px) {
+    .tabs__description {
+        width:70%;
+	}
+}
+@media screen and (max-width:1100px) {
+	.tabs {
+		margin-top: 10%;
+		width:70%;
+		height: 90%;
+	}
+	.tabs__container {
+		flex-flow:column;
+	}
+	.tabs__block {
+		width: 80%;
+		height: 100%;
+	}
+	.tabs__body {
+		height: 50%;
+	}
+	.tabs__name, .tabs__description, .tabs__price {
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+	.modal {
+		width:60%;
+		height: 35%;
+	}
+/* 
+	.tabs__description {
+        width:70%;
+	}
+	.tabs__name {
+		font-size: 20pt;
+	}
+	.tabs__price-symb {
+		font-size: 15pt;
+	}
+	.tabs__price-value {
+		font-size: 25pt;
+	}
+	.tabs__price {
+		font-size: 20pt;
+	} */
+}
