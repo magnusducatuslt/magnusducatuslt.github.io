@@ -8,6 +8,7 @@ window.onmessage = function(e) {
   switch (payload.method) {
     case 'set':
       localStorage.setItem(payload.key, JSON.stringify(payload.data));
+      parent.postMessage(data, '*');
       break;
     case 'get':
       var parent = window.parent;
@@ -16,6 +17,7 @@ window.onmessage = function(e) {
       break;
     case 'remove':
       localStorage.removeItem(payload.key);
+      parent.postMessage(data, '*');
       break;
   }
 };
