@@ -8,17 +8,19 @@ window.onmessage = function(e) {
     case 'set':
       var parent = window.parent;
       localStorage.setItem(payload.key, JSON.stringify(payload.data));
-      parent.postMessage(data, '*');
+      parent.postMessage(JSON.stringify(payload), '*');
       break;
     case 'get':
       var parent = window.parent;
       var data = localStorage.getItem(payload.key);
-      parent.postMessage(data, '*');
+      var newPayload = Object.assign(payload);
+      newPayload.data = data;
+      parent.postMessage(JSON.stringify(newPayload), '*');
       break;
     case 'remove':
       var parent = window.parent;
       localStorage.removeItem(payload.key);
-      parent.postMessage(data, '*');
+      parent.postMessage(JSON.stringify(payload), '*');
       break;
   }
 };
