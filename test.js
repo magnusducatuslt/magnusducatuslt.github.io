@@ -4,9 +4,9 @@
 console.log('loaded');
 window.onmessage = function(e) {
   var payload = JSON.parse(e.data);
-  console.log(payload);
   switch (payload.method) {
     case 'set':
+      var parent = window.parent;
       localStorage.setItem(payload.key, JSON.stringify(payload.data));
       parent.postMessage(data, '*');
       break;
@@ -16,6 +16,7 @@ window.onmessage = function(e) {
       parent.postMessage(data, '*');
       break;
     case 'remove':
+      var parent = window.parent;
       localStorage.removeItem(payload.key);
       parent.postMessage(data, '*');
       break;
